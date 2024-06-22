@@ -7,6 +7,11 @@ IDE：eclipse
 專案建立工具：Maven
 API測試工具：talend api tester
 
+# Ref
+使用者註冊/登入 ref: https://medium.com/@tericcabrel/implement-jwt-authentication-in-a-spring-boot-3-application-5839e4fd8fac
+Spring boot ref: https://ithelp.ithome.com.tw/articles/10318938
+JPA: https://ithelp.ithome.com.tw/articles/10326115
+
 # 所需功能
 
 1. 新增喜好金融商品
@@ -18,11 +23,7 @@ API測試工具：talend api tester
 4. 更改喜好金融商品資訊
   使用者可以透過介面進行更改所喜好的金融商品資訊(產品名稱、產品價格、手續費率)、預計要扣款的帳號、購買數量。
 
-# 測試指令
-
-使用者註冊/登入 ref: https://medium.com/@tericcabrel/implement-jwt-authentication-in-a-spring-boot-3-application-5839e4fd8fac
-Spring boot ref: https://ithelp.ithome.com.tw/articles/10318938
-JPA: https://ithelp.ithome.com.tw/articles/10326115
+# API 測試指令
 
 註冊：
 
