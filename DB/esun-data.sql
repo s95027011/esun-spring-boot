@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `esun` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `esun`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: esun
@@ -16,26 +18,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `like_list`
---
-
-DROP TABLE IF EXISTS `like_list`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `like_list` (
-  `number_of_products` int NOT NULL,
-  `total_amount` double NOT NULL,
-  `total_fee` double NOT NULL,
-  `userid` int NOT NULL,
-  `sn` bigint NOT NULL,
-  `account` varchar(255) NOT NULL,
-  PRIMARY KEY (`sn`),
-  UNIQUE KEY `UKp2e4ia3xps1lcc8hnhw0a52qq` (`userid`),
-  CONSTRAINT `FKmxaij2jdqviddxg0cp6c8ysgw` FOREIGN KEY (`userid`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `like_list`
 --
 
@@ -45,23 +27,6 @@ LOCK TABLES `like_list` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `like_list_product`
---
-
-DROP TABLE IF EXISTS `like_list_product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `like_list_product` (
-  `like_list_id` bigint NOT NULL,
-  `product_id` bigint NOT NULL,
-  KEY `FK7bu0ygow2ajwpxv26mbq4i389` (`product_id`),
-  KEY `FK3dqne3qappmajuqt413nbynle` (`like_list_id`),
-  CONSTRAINT `FK3dqne3qappmajuqt413nbynle` FOREIGN KEY (`like_list_id`) REFERENCES `like_list` (`sn`),
-  CONSTRAINT `FK7bu0ygow2ajwpxv26mbq4i389` FOREIGN KEY (`product_id`) REFERENCES `product` (`no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `like_list_product`
 --
 
@@ -69,18 +34,6 @@ LOCK TABLES `like_list_product` WRITE;
 /*!40000 ALTER TABLE `like_list_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `like_list_product` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `like_list_seq`
---
-
-DROP TABLE IF EXISTS `like_list_seq`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `like_list_seq` (
-  `next_val` bigint DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `like_list_seq`
@@ -93,43 +46,14 @@ INSERT INTO `like_list_seq` VALUES (1);
 UNLOCK TABLES;
 
 --
--- Table structure for table `product`
---
-
-DROP TABLE IF EXISTS `product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `product` (
-  `fee_rate` double NOT NULL,
-  `price` double NOT NULL,
-  `visible` bit(1) NOT NULL,
-  `no` bigint NOT NULL,
-  `product_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`no`),
-  UNIQUE KEY `UK383i0awxqlq7pc33hil7afbgo` (`product_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `product`
 --
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (0.1,100,_binary '\0',1,'Investment Fund A'),(0.2,200,_binary '\0',2,'Investment Fund B'),(0.3,300,_binary '\0',3,'Investment Fund C');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `product_seq`
---
-
-DROP TABLE IF EXISTS `product_seq`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `product_seq` (
-  `next_val` bigint DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `product_seq`
@@ -137,30 +61,9 @@ CREATE TABLE `product_seq` (
 
 LOCK TABLES `product_seq` WRITE;
 /*!40000 ALTER TABLE `product_seq` DISABLE KEYS */;
-INSERT INTO `product_seq` VALUES (1);
+INSERT INTO `product_seq` VALUES (101);
 /*!40000 ALTER TABLE `product_seq` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `user`
---
-
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `id` int NOT NULL,
-  `created_at` datetime(6) DEFAULT NULL,
-  `updated_at` datetime(6) DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  `account` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UKob8kqyqqgmefl0aco34akdtpe` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `user`
@@ -168,20 +71,9 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'2024-06-22 20:52:20.544000','2024-06-22 20:52:20.544000','aaa@gmail.com','1111','$2a$10$nx7RfGA/K3xWAfYPRRPbquUVZHzZU2wHU8HfA9wMSW8ID46cvTXnu','ROLE_USER','John');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `user_seq`
---
-
-DROP TABLE IF EXISTS `user_seq`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_seq` (
-  `next_val` bigint DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `user_seq`
@@ -189,7 +81,7 @@ CREATE TABLE `user_seq` (
 
 LOCK TABLES `user_seq` WRITE;
 /*!40000 ALTER TABLE `user_seq` DISABLE KEYS */;
-INSERT INTO `user_seq` VALUES (1);
+INSERT INTO `user_seq` VALUES (51);
 /*!40000 ALTER TABLE `user_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,4 +98,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-22 15:02:10
+-- Dump completed on 2024-06-22 20:57:08
