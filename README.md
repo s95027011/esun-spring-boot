@@ -80,11 +80,16 @@ and return
 
 *之後使用Token --> 於Header中加入*
 
-      Authorization Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU
+      Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU
 
 - 確認目前登入狀態
 
 `GET http://localhost:8080/users/me`
+
++
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU
+
 
 - 新增商品
 
@@ -108,17 +113,17 @@ and return
 
 - 查詢清單：功能2 詢喜好金融商品清單
 
-`GET http://localhost:8080/api/like-list/1`
+`GET http://localhost:8080/api/like-list/{likeListId}`
 
-`GET http://localhost:8080/api/like-list/user/1`
+`GET http://localhost:8080/api/like-list/user/{likeListId}`
 
-- 刪除商品：功能3 刪除喜好金融商品資訊
+- 刪除商品：功能3 刪除喜好金融商品資訊，
 
-`DELETE http://localhost:8080/api/like-list/remove-product/1/1`
+`DELETE http://localhost:8080/api/like-list/remove-product/{likeListId}/{productId}`
 
 - 變更清單內容：功能4 更改喜好金融商品資訊
 
-`PUT http://localhost:8080/api/like-list/update-products/1`
+`PUT http://localhost:8080/api/like-list/update-products/{likeListId}`
 
       {
         "userId": 1,
