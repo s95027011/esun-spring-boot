@@ -21,7 +21,7 @@
 
 - Vuejs: https://book.vue.tw/CH4/4-1-vue-router-intro.html
 
--- https://vuejs.org/examples/#fetching-data
+         https://vuejs.org/examples/#fetching-data
 
 ## 所需功能
 
