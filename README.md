@@ -5,6 +5,7 @@
 資料庫：MySQL + Spring JPA
 IDE：eclipse
 專案建立工具：Maven
+API測試工具：talend api tester
 
 # 所需功能
 
@@ -24,66 +25,66 @@ Spring boot ref: https://ithelp.ithome.com.tw/articles/10318938
 JPA: https://ithelp.ithome.com.tw/articles/10326115
 
 註冊：
-'''
-POST http://localhost:8080/auth/signup
-'''
 
-'''
-POST http://localhost:8080/auth/signup
-{
+`POST http://localhost:8080/auth/signup`
+
+`{
     "email": "sss@gmail.com",
     "password": "abc123",
     "confirmPassword": "abc123",
     "userName": "Amy",
     "account": "1111"
-}
-'''
-登入：
-'''
-POST http://localhost:8080/auth/login
-'''
+}`
 
-'''
-POST http://localhost:8080/auth/login
-{
+登入：
+
+`POST http://localhost:8080/auth/login`
+
+`{
     "email": "sss@gmail.com",
     "password": "abc123"
-}
-'''
-token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU
+}`
+
+and return
+`token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU`
+
+之後使用Token --> 於Header中加入
+`Authorization Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU`
 
 確認目前登入狀態：
-GET http://localhost:8080/users/me
-Header：
-Authorization Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU
+`GET http://localhost:8080/users/me`
 
 新增商品：
-POST http://localhost:8080/api/products/add
-{
+`POST http://localhost:8080/api/products/add`
+
+`{
     "productName": "Investment Fund A",
     "price": 100.0,
     "feeRate": 0.1
 }
-
+`
 新增清單：功能1 新增喜好金融商品
-POST http://localhost:8080/api/like-list/add
-{
+`POST http://localhost:8080/api/like-list/add`
+
+`{
   "userId": 1,
   "account": "user123",
   "productIds": [1, 2, 3]
-}
+}`
 
 查詢清單：功能2 詢喜好金融商品清單
-GET http://localhost:8080/api/like-list/1
-GET http://localhost:8080/api/like-list/user/1
+`GET http://localhost:8080/api/like-list/1`
+
+`GET http://localhost:8080/api/like-list/user/1`
 
 刪除商品：功能3 刪除喜好金融商品資訊
-DELETE http://localhost:8080/api/like-list/remove-product/1/1
+`DELETE http://localhost:8080/api/like-list/remove-product/1/1`
 
 變更清單內容：功能4 更改喜好金融商品資訊
-PUT http://localhost:8080/api/like-list/update-products/1
-{
+`PUT http://localhost:8080/api/like-list/update-products/1`
+
+`{
   "userId": 1,
   "account": "user123",
   "productIds": [1, 2, 3]
-}
+}`
