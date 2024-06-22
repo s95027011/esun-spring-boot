@@ -107,6 +107,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0I
           "feeRate": 0.1
       }
 
+- 查看所有商品
+
+`GET http://localhost:8080/api/products/all`
+
 - 新增清單：功能1 新增喜好金融商品
 
 `POST http://localhost:8080/api/like-list/add`
