@@ -19,6 +19,8 @@
 
 - JPA: https://ithelp.ithome.com.tw/articles/10326115
 
+- Vuejs: https://book.vue.tw/CH4/4-1-vue-router-intro.html、https://vuejs.org/examples/#fetching-data
+
 ## 所需功能
 
 1. 新增喜好金融商品
@@ -34,6 +36,8 @@
 
    使用者可以透過介面進行更改所喜好的金融商品資訊(產品名稱、產品價格、手續費率)、預計要扣款的帳號、購買數量。
 ### 前端
+
+`npm install vue-router`
 
 `npm run serve`
 
