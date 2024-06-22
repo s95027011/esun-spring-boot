@@ -47,11 +47,6 @@
          npm install
          npm run dev
 
-         
-         npm install vue-router
-
-         npm run serve
-
 `http://localhost:3000/`
 
 ### 後端
