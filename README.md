@@ -19,7 +19,8 @@
 
 - JPA: https://ithelp.ithome.com.tw/articles/10326115
 
-- Vuejs: https://book.vue.tw/CH4/4-1-vue-router-intro.html   https://vuejs.org/examples/#fetching-data
+- Vuejs: https://book.vue.tw/CH4/4-1-vue-router-intro.html
+https://vuejs.org/examples/#fetching-data
 
 ## 所需功能
 
