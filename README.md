@@ -47,7 +47,7 @@
 
 ### 後端
 
-`mvnw spring-boot:run`
+      mvnw spring-boot:run
 
 `http://localhost:8080/`
 
@@ -57,30 +57,30 @@
 
 `POST http://localhost:8080/auth/signup`
 
-`{
-    "email": "sss@gmail.com",
-    "password": "abc123",
-    "confirmPassword": "abc123",
-    "userName": "Amy",
-    "account": "1111"
-}`
+      {
+          "email": "sss@gmail.com",
+          "password": "abc123",
+          "confirmPassword": "abc123",
+          "userName": "Amy",
+          "account": "1111"
+      }
 
 - 登入
 
 `POST http://localhost:8080/auth/login`
 
-`{
-    "email": "sss@gmail.com",
-    "password": "abc123"
-}`
+      {
+          "email": "sss@gmail.com",
+          "password": "abc123"
+      }
 
 and return
 
-`token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU`
+      token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU
 
 *之後使用Token --> 於Header中加入*
 
-`Authorization Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU`
+      Authorization Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU
 
 - 確認目前登入狀態
 
@@ -90,21 +90,21 @@ and return
 
 `POST http://localhost:8080/api/products/add`
 
-`{
-    "productName": "Investment Fund A",
-    "price": 100.0,
-    "feeRate": 0.1
-}
-`
+      {
+          "productName": "Investment Fund A",
+          "price": 100.0,
+          "feeRate": 0.1
+      }
+
 - 新增清單：功能1 新增喜好金融商品
 
 `POST http://localhost:8080/api/like-list/add`
 
-`{
-  "userId": 1,
-  "account": "user123",
-  "productIds": [1, 2, 3]
-}`
+      {
+        "userId": 1,
+        "account": "user123",
+        "productIds": [1, 2, 3]
+      }
 
 - 查詢清單：功能2 詢喜好金融商品清單
 
@@ -120,8 +120,8 @@ and return
 
 `PUT http://localhost:8080/api/like-list/update-products/1`
 
-`{
-  "userId": 1,
-  "account": "user123",
-  "productIds": [1, 2, 3]
-}`
+      {
+        "userId": 1,
+        "account": "user123",
+        "productIds": [1, 2, 3]
+      }
