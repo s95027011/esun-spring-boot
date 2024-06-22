@@ -59,7 +59,7 @@
 
 - 註冊
 
-`POST http://localhost:8080/auth/signup`
+`POST http://localhost:8080/api/signup`
 
       {
           "email": "sss@gmail.com",
@@ -71,7 +71,7 @@
 
 - 登入
 
-`POST http://localhost:8080/auth/login`
+`POST http://localhost:8080/api/login`
 
       {
           "email": "sss@gmail.com",
