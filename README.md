@@ -25,6 +25,8 @@
 
 - Vuejs doenload: https://vuejs.org/guide/quick-start
 
+- 前後端代理設定參考: https://smallbookboy.com/vue%E4%BD%BF%E7%94%A8vite%E8%A8%AD%E5%AE%9A%E4%BB%A3%E7%90%86proxy%EF%BC%8C%E8%BD%89%E7%99%BC%E8%AB%8B%E6%B1%82%E7%B5%A6%E5%BE%8C%E7%AB%AFspring-boot/#vue%e8%a8%ad%e5%ae%9a%e4%bb%a3%e7%90%86
+
 ## 所需功能
 
 1. 新增喜好金融商品
