@@ -2,7 +2,7 @@
 
 - 語言：java version 21.0.1
 
-- 框架：Spring Boot 3.3.1+ Rest
+- 框架：Spring Boot 3.3.1+ Restful API
 
 - 資料庫：MySQL + Spring JPA
 
