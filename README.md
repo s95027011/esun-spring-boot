@@ -96,6 +96,7 @@ and return
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU
 
+## 所有功能都需要帶著Token
 
 - 新增商品
 
