@@ -1,10 +1,15 @@
 # esun-spring-boot
 
 語言：java version 21.0.1
+
 框架：Spring Boot 3.3.1+ Rest
+
 資料庫：MySQL + Spring JPA
+
 IDE：eclipse
+
 專案建立工具：Maven
+
 API測試工具：talend api tester
 
 # Ref
