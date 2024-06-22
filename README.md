@@ -21,8 +21,14 @@ IDE：eclipse
 
 使用者註冊/登入 ref: https://medium.com/@tericcabrel/implement-jwt-authentication-in-a-spring-boot-3-application-5839e4fd8fac
 Spring boot ref: https://ithelp.ithome.com.tw/articles/10318938
+JPA: https://ithelp.ithome.com.tw/articles/10326115
 
 註冊：
+'''
+POST http://localhost:8080/auth/signup
+'''
+
+'''
 POST http://localhost:8080/auth/signup
 {
     "email": "sss@gmail.com",
@@ -31,12 +37,19 @@ POST http://localhost:8080/auth/signup
     "userName": "Amy",
     "account": "1111"
 }
+'''
 登入：
+'''
+POST http://localhost:8080/auth/login
+'''
+
+'''
 POST http://localhost:8080/auth/login
 {
     "email": "sss@gmail.com",
     "password": "abc123"
 }
+'''
 token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ21haWwuY29tIiwiaWF0IjoxNzE4OTk2MTY0LCJleHAiOjE3MTg5OTk3NjR9.gyfO7NLeadAogr2Az61TG84Tl9eUweMcnMgcomZzxlU
 
 確認目前登入狀態：
